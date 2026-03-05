@@ -1,18 +1,69 @@
-<body>
-  <div class="scene">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isabel + Marc</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="intro" aria-label="Wedding invitation intro">
+      <button id="skipIntro" class="skip" type="button">Skip</button>
 
-    <div id="envelope" class="envelope">
-      <div class="flap"></div>
+      <img
+        src="/images/Cupid.png"
+        class="decor decor-cupid float"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        src="/images/Drinks2.png"
+        class="decor decor-drinks float"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        src="/images/FlowerYellow.png"
+        class="decor decor-flower float"
+        alt=""
+        aria-hidden="true"
+      />
+      <img
+        src="/images/KlinkGlasses.png"
+        class="decor decor-glasses float"
+        alt=""
+        aria-hidden="true"
+      />
 
-      <div class="letter">
-        <h1>Marc & Isabel</h1>
-        <p>You're invited</p>
+      <section class="envelope-stage" aria-label="Invitation envelope">
+        <button
+          id="envelopeToggle"
+          class="envelope"
+          type="button"
+          aria-expanded="false"
+          aria-controls="invitationLetter"
+          aria-label="Open invitation"
+        >
+          <span class="envelope-base" aria-hidden="true">
+            <img src="/images/Envelope.png" alt="" aria-hidden="true" />
+          </span>
 
-        <button id="openBtn">Open invitation</button>
-      </div>
-    </div>
+          <span class="envelope-flap" aria-hidden="true"></span>
 
-  </div>
+          <span id="invitationLetter" class="letter" aria-live="polite">
+            <h1 id="invitationTitle" class="title" tabindex="-1">Isabel + Marc</h1>
+            <p class="date">May 8, 2027</p>
+          </span>
+        </button>
+      </section>
+    </main>
 
-  <script type="module" src="/src/main.js"></script>
-</body>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
