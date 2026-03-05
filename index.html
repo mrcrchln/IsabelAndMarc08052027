@@ -4,44 +4,55 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Isabel + Marc</title>
+
+    <!-- Place custom title fonts in /public/fonts:
+      - MadelynRough.woff2
+      - MadelynRough.woff
+    -->
+    <link
+      rel="preload"
+      href="/fonts/MadelynRough.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/MadelynRough.woff"
+      as="font"
+      type="font/woff"
+      crossorigin
+    />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
     <main class="intro" aria-label="Wedding invitation intro">
+      <p class="sr-only">Wedding invitation for Isabel and Marc, May 8, 2027.</p>
+
       <button id="skipIntro" class="skip" type="button">Skip</button>
 
       <img
         src="/images/Cupid.png"
-        class="decor decor-cupid float"
+        class="decor decor-cupid"
         alt=""
         aria-hidden="true"
       />
       <img
-        src="/images/Drinks2.png"
-        class="decor decor-drinks float"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        src="/images/FlowerYellow.png"
-        class="decor decor-flower float"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        src="/images/KlinkGlasses.png"
-        class="decor decor-glasses float"
+        src="/images/Drinks3.png"
+        class="decor decor-drinks"
         alt=""
         aria-hidden="true"
       />
 
-      <section class="envelope-stage" aria-label="Invitation envelope">
+      <section class="scene" aria-label="Invitation envelope scene">
         <button
           id="envelopeToggle"
           class="envelope"
@@ -49,16 +60,48 @@
           aria-expanded="false"
           aria-controls="invitationLetter"
           aria-label="Open invitation"
+          data-state="closed"
         >
-          <span class="envelope-base" aria-hidden="true">
-            <img src="/images/Envelope.png" alt="" aria-hidden="true" />
-          </span>
+          <span class="stack">
+            <img
+              src="/images/envelope_back_static.svg"
+              class="layer layer-back"
+              alt=""
+              aria-hidden="true"
+            />
 
-          <span class="envelope-flap" aria-hidden="true"></span>
+            <span class="letter-slot">
+              <span class="letter-shadow" aria-hidden="true"></span>
+              <span
+                id="invitationLetter"
+                class="letter"
+                role="group"
+                aria-label="Invitation details"
+                aria-live="polite"
+              >
+                <h1 id="invitationTitle" class="title" tabindex="-1">Isabel + Marc</h1>
+                <p class="date">May 8, 2027</p>
+              </span>
+            </span>
 
-          <span id="invitationLetter" class="letter" aria-live="polite">
-            <h1 id="invitationTitle" class="title" tabindex="-1">Isabel + Marc</h1>
-            <p class="date">May 8, 2027</p>
+            <img
+              src="/images/envelope_front_pocket.svg"
+              class="layer layer-front"
+              alt=""
+              aria-hidden="true"
+            />
+
+            <span class="flap-wrap" aria-hidden="true">
+              <img src="/images/envelope_flap.svg" class="layer layer-flap" alt="" />
+              <span class="flap-shade"></span>
+            </span>
+
+            <img
+              src="/images/envelope_closed.svg"
+              class="layer layer-closed"
+              alt=""
+              aria-hidden="true"
+            />
           </span>
         </button>
       </section>
